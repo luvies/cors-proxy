@@ -1,0 +1,13 @@
+{
+  "extends": "@luvies/config/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "module": "commonjs",
+    "rootDir": "src"
+    // The base tsconfig defaults to es2018
+    // "target": "es2017",
+    // "lib": ["es2017"]
+  },
+  "exclude": ["node_modules", "dist"]
+}
