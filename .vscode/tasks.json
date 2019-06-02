@@ -15,6 +15,14 @@
       "problemMatcher": []
     },
     {
+      "label": "build watch",
+      "type": "shell",
+      "command": "yarn",
+      "args": ["build:watch"],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
       "label": "lint",
       "type": "shell",
       "command": "yarn",
