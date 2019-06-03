@@ -19,6 +19,18 @@ export interface Options {
    */
   port?: number;
   /**
+   * If given, will listen on this port with a HTTPS server as well.
+   */
+  httpsPort?: number;
+  /**
+   * If using HTTPS, this is the file of the private certificate.
+   */
+  fileKey?: string;
+  /**
+   * If using HTTPS, this is the file of the public certificate.
+   */
+  fileCrt?: string;
+  /**
    * The host to listen on.
    */
   host?: string;

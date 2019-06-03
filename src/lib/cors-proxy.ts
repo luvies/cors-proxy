@@ -1,6 +1,10 @@
 import * as defaults from './defaults';
 import { KoaCustomContext, Options, bodyParser, options, proxy } from './middleware';
 import Koa from 'koa';
+import fs from 'fs';
+import http from 'http';
+import https from 'https';
+import path from 'path';
 
 export function createCorsProxy(
   opts: Options,
@@ -20,13 +24,22 @@ export function createCorsProxy(
   return {
     server,
     start(listeningListener) {
-      server.listen(
-        {
-          port,
-          host,
-        },
-        listeningListener && (() => listeningListener(port, host)),
-      );
+      http
+        .createServer(server.callback())
+        .listen({ port, host }, listeningListener && (() => listeningListener(port, host)));
+
+      if (opts.httpsPort) {
+        const { httpsPort } = opts;
+        const key = fs.readFileSync(path.join(process.cwd(), opts.fileKey || defaults.fileKey));
+        const cert = fs.readFileSync(path.join(process.cwd(), opts.fileCrt || defaults.fileCrt));
+
+        https
+          .createServer({ key, cert }, server.callback())
+          .listen(
+            { port: httpsPort, host },
+            listeningListener && (() => listeningListener(httpsPort, host)),
+          );
+      }
     },
   };
 }
