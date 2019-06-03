@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@luvies/config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@luvies/config/-/config-1.0.0.tgz#4774a116b847e459ea512b7ecf024982c504f024"
-  integrity sha512-47Mn2l2MkTtDk35fDOGwpcSJ6e+qZYJbwRoXWkMF3FbnQZgqohD63UVHFdOXb8mCYkIrOip5vyJa0rojUBlPCw==
+"@luvies/config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@luvies/config/-/config-1.0.1.tgz#d094e529dea818d8abbd54f14051cc96ce2eaa25"
+  integrity sha512-BpsDk44wHBau/A8iKczhmY9HIkIPPWWoDpJniNJHQCyBXHBo1/QvoPpNp5mtt3S3FGS3mnYqdnoSRyPOQRQRvA==
 
 "@types/accepts@*":
   version "1.3.5"
@@ -469,6 +469,13 @@ eslint-plugin-prettier@^3.1.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
+eslint-plugin-sort-imports-es6-autofix@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-imports-es6-autofix/-/eslint-plugin-sort-imports-es6-autofix-0.4.0.tgz#3bcc87f7cc8596dea48ca3eb12b0103dfc21c98c"
+  integrity sha512-LyqXwY0TIu997NdTbSPtTo3KgGRrpMLni4AUxqbQqkhE/kS+KXXngHoiW5c1PTaLgmHO6siBb90v1TCtyqBu/Q==
+  dependencies:
+    eslint "^5.14.1"
+
 eslint-scope@^4.0.0, eslint-scope@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.3.tgz#ca03833310f6889a3264781aa82e63eb9cfe7848"
@@ -487,7 +494,7 @@ eslint-visitor-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
   integrity sha512-qzm/XxIbxm/FHyH341ZrbnMUpe+5Bocte9xkmFMzPMjRaZMcXww+MpBptFvtU+79L362nqiLhekCxCxDPaUMBQ==
 
-eslint@^5.16.0:
+eslint@^5.14.1, eslint@^5.16.0:
   version "5.16.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.16.0.tgz#a1e3ac1aae4a3fbd8296fcf8f7ab7314cbb6abea"
   integrity sha512-S3Rz11i7c8AA5JPv7xAH+dOyq/Cu/VXHiHXBPOU1k/JAM5dXqQPt3qcrhpHSorXmrpu2g0gkIBVXAqCpzfoZIg==

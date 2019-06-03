@@ -1,6 +1,6 @@
 import * as defaults from './defaults';
-import fetch, { Headers } from 'node-fetch';
 import { ParameterizedContext } from 'koa';
+import fetch, { Headers } from 'node-fetch';
 import rawBody from 'raw-body';
 
 export interface KoaCustomContext {
