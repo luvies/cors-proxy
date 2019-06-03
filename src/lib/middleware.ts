@@ -26,6 +26,10 @@ export interface Options {
    * Headers to strip out when sending the request to the target URL.
    */
   excludedHeaders?: string[];
+  /**
+   * A callback to use for when a proxy call has finished.
+   */
+  proxyListener?: () => void;
 }
 
 export async function bodyParser(ctx: KoaContext, next: () => Promise<any>): Promise<any> {
@@ -85,7 +89,10 @@ export async function proxy(opts: Options, ctx: KoaContext): Promise<any> {
   });
 
   for (const [header, value] of resp.headers) {
-    if (header !== 'content-encoding' && header !== 'transfer-encoding') {
+    // Servers that send this header do so because the content was compressed
+    // in some way, but we already decompress the body, so sending the header
+    // causes the browser to fail to decode it.
+    if (header !== 'content-encoding') {
       ctx.response.set(header, value);
     }
   }
@@ -93,4 +100,8 @@ export async function proxy(opts: Options, ctx: KoaContext): Promise<any> {
   cors(ctx);
 
   ctx.response.body = resp.body;
+
+  if (opts.proxyListener) {
+    resp.body.on('finish', opts.proxyListener);
+  }
 }
