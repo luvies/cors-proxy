@@ -4,7 +4,7 @@
   "description": "A simple CORS proxy CLI",
   "main": "dist/lib/index.js",
   "bin": {
-    "corx-proxy": "./dist/bin/cli.js"
+    "cors-proxy": "dist/bin/cli.js"
   },
   "repository": "https://github.com/luvies/cors-proxy",
   "author": "luvies",
