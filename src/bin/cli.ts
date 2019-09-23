@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import * as defaults from '../lib/defaults';
 import { createCorsProxy } from '../lib';
 import yargs from 'yargs';
